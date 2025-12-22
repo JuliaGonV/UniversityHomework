@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # Ubuntu 22.04 LTS (Jammy Jellyfish)
+  config.vm.box = "ubuntu/jammy64"
+
+  # VM hostname
+  config.vm.hostname = "devops-ubuntu"
+
+  # Provider: VirtualBox
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "devops-ubuntu-vm"
+    vb.memory = 2048
+    vb.cpus = 2
+  end
+
+  # Private network (host-only)
+  config.vm.network "private_network", ip: "192.168.56.10"
+
+  # Optional: port forwarding
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Optional: provisioning example
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   apt update -y
+  #   apt install -y nginx
+  #   systemctl enable nginx
+  #   systemctl start nginx
+  # SHELL
+
+end

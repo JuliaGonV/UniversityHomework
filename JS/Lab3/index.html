@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 3 - Var 14 (400x400)</title>
+    <style>
+        body { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            font-family: Arial, sans-serif;
+        }
+
+        .row { 
+            display: flex; 
+            gap: 5px; 
+            flex-wrap: wrap; 
+            margin: 10px 0; 
+            align-items: center; 
+        }
+
+        canvas { 
+            border: 2px solid #333; 
+            background: #fff; 
+            display: block; 
+            margin: 5px 0; 
+        }
+        
+        #log { 
+            max-height: 100px; 
+            overflow-y: auto; 
+            border: 1px solid #eee; 
+            font-size: 12px; 
+            padding: 5px; 
+            white-space: pre-wrap;
+        }
+
+        .controls { 
+            background: #f4f4f4; 
+            padding: 8px; 
+            border-radius: 4px; 
+            margin-bottom: 10px;
+        }
+        
+        input[type="number"] { 
+            width: 50px; 
+        }
+
+        .square {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #999;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+            user-select: none;
+            margin-right: 5px;
+        }
+
+        .selected {
+            background-color: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<h3>1. Перестановка елементів (Swap)</h3>
+<div class="container" id="swapContainer">
+    <p class="square" onClick="selectSquare(this)">B</p>
+    <p class="square" onClick="selectSquare(this)">A</p>
+    <p class="square" onClick="selectSquare(this)">D</p>
+    <p class="square" onClick="selectSquare(this)">C</p>
+    <p class="square" onClick="selectSquare(this)">E</p>
+</div>    
+<p>Натисніть на два квадрати, щоб поміняти їх місцями.</p>
+
+<h3>2. Canvas (Траєкторія Точки до Цілі)</h3>
+<div class="controls">
+    Поточні координати: 
+    X: <b id="currentX">?</b>, 
+    Y: <b id="currentY">?</b>
+</div>
+
+<canvas id="canv" width="400" height="400"></canvas>
+<div class="controls">
+    Введіть нові координати (X, Y): 
+    X: <input id="newX" type="number" value="200">
+    Y: <input id="newY" type="number" value="150">
+    <button onclick="updatePoint()">Перемістити</button>
+    <button onclick="initializePoint()">Скинути</button>
+</div>
+
+<div id="log">Історія переміщень...</div>
+
+<h3>3. File</h3>
+<div class="controls">
+    <input type="file" onchange="readFile(this)">
+    <button onclick="saveFile()">Зберегти</button>
+</div>
+<div id="fileSwapContainer"></div>
+
+<script>
+    const cv = document.getElementById('canv'), cx = cv.getContext('2d');
+    const logDiv = document.getElementById('log');
+    const currentXDisplay = document.getElementById('currentX');
+    const currentYDisplay = document.getElementById('currentY');
+    
+    let currentX, currentY;
+    let totalDistance = 0;
+    let trajectory = []; 
+
+    const TARGET_X1 = 150;
+    const TARGET_Y1 = 150;
+    const TARGET_X2 = 250;
+    const TARGET_Y2 = 250;
+    const POINT_RADIUS = 3;
+
+    function initializePoint() {
+        currentX = Math.floor(Math.random() * (cv.width - 20)) + 10;
+        currentY = Math.floor(Math.random() * (cv.height - 20)) + 10;
+
+        totalDistance = 0;
+        trajectory = [{x: currentX, y: currentY}];
+        
+        logDiv.innerHTML = `Початок: (${currentX.toFixed(0)}, ${currentY.toFixed(0)}).<br>`;
+
+        drawCanvas();
+    }
+
+    function updatePoint() {
+        const newX = +document.getElementById('newX').value;
+        const newY = +document.getElementById('newY').value;
+
+        let nextX = Math.max(0, Math.min(cv.width, newX));
+        let nextY = Math.max(0, Math.min(cv.height, newY));
+
+        const lastX = currentX;
+        const lastY = currentY;
+
+        const dist = Math.sqrt(Math.pow(nextX - lastX, 2) + Math.pow(nextY - lastY, 2));
+
+        if (dist > 0) {
+            currentX = nextX;
+            currentY = nextY;
+            totalDistance += dist;
+            trajectory.push({x: currentX, y: currentY});
+            
+            logMovement(lastX, lastY, nextX, nextY, dist);
+            drawCanvas();
+        }
+    }
+
+    function drawCanvas() {
+        cx.clearRect(0, 0, cv.width, cv.height);
+
+        cx.strokeStyle = '#333333';
+        cx.lineWidth = 1;
+        cx.strokeRect(TARGET_X1, TARGET_Y1, TARGET_X2 - TARGET_X1, TARGET_Y2 - TARGET_Y1);
+        cx.fillStyle = '#333333';
+        cx.font = '16px Arial';
+
+        if (trajectory.length > 1) {
+            cx.beginPath();
+            cx.strokeStyle = '#2980b9';
+            cx.lineWidth = 2;
+            cx.moveTo(trajectory[0].x, trajectory[0].y);
+            
+            for (let i = 1; i < trajectory.length; i++) {
+                cx.lineTo(trajectory[i].x, trajectory[i].y);
+            }
+            cx.stroke();
+        }
+
+        cx.beginPath();
+        cx.arc(currentX, currentY, POINT_RADIUS, 0, Math.PI * 2);
+        cx.fillStyle = '#c0392b';
+        cx.fill();
+        
+        currentXDisplay.textContent = currentX.toFixed(0);
+        currentYDisplay.textContent = currentY.toFixed(0);
+    }
+
+    function logMovement(x1, y1, x2, y2, dist) {
+        let hit = (x2 >= TARGET_X1 && x2 <= TARGET_X2 && y2 >= TARGET_Y1 && y2 <= TARGET_Y2);
+
+        const logEntry = `<br>Переміщення з (${x1.toFixed(0)}, ${y1.toFixed(0)}) до (${x2.toFixed(0)}, ${y2.toFixed(0)}). ${hit ? "Влучання!" : "Промах!"}`;
+        logDiv.insertAdjacentHTML('beforeend', logEntry);
+    }
+
+
+    const container = document.getElementById('swapContainer');
+    const fileContainer = document.getElementById('fileSwapContainer');
+    let selectedSquare = null;
+
+    function selectSquare(element) {
+        if (!selectedSquare) {
+            selectedSquare = element;
+            element.classList.add('selected');
+        } 
+        else if (selectedSquare === element) {
+            selectedSquare.classList.remove('selected');
+            selectedSquare = null;
+        }
+        else {
+            const item1 = selectedSquare;
+            const item2 = element;
+            const parent = container;
+
+            const tempPlaceholder = document.createElement('div');
+            parent.replaceChild(tempPlaceholder, item2); 
+            parent.insertBefore(item2, item1); 
+            parent.replaceChild(item1, tempPlaceholder); 
+
+            item1.classList.remove('selected');
+            selectedSquare = null;
+        }
+    }
+
+    function selectFileSquare(element) {
+        if (!selectedSquare) {
+            selectedSquare = element;
+            element.classList.add('selected');
+        } 
+        else if (selectedSquare === element) {
+            selectedSquare.classList.remove('selected');
+            selectedSquare = null;
+        }
+        else {
+            const item1 = selectedSquare;
+            const item2 = element;
+            const parent = fileContainer;
+
+            const tempPlaceholder = document.createElement('div');
+            parent.replaceChild(tempPlaceholder, item2); 
+            parent.insertBefore(item2, item1); 
+            parent.replaceChild(item1, tempPlaceholder); 
+
+            item1.classList.remove('selected');
+            selectedSquare = null;
+        }
+    }
+
+    function readFile(input) {
+        let f = input.files[0];
+        if(!f) return;
+        let r = new FileReader();
+        r.onload = e => {
+            let box = fileContainer;
+            box.innerHTML = '';
+            e.target.result.trim().split(/\s+/).forEach(txt => {
+                if(!txt) return;
+                let p = document.createElement('p');
+                p.className = 'square'; 
+                p.textContent = txt;
+                p.onclick = function() { selectFileSquare(this) };
+                box.appendChild(p);
+            });
+        };
+        r.readAsText(f);
+    }
+    
+    function saveFile() {
+        let txt = [...document.querySelectorAll('#fileSwapContainer p')].map(p => p.textContent).join(' ');
+        let a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([txt], {type:'text/plain'}));
+        a.download = 'result.txt';
+        a.click();
+    }
+
+    initializePoint();
+</script>
+</body>
+</html>
