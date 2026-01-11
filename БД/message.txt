@@ -1,0 +1,92 @@
+-- 1. СТВОРЕННЯ БАЗИ ДАНИХ
+CREATE DATABASE TravelAgency;
+GO
+USE TravelAgency;
+GO
+
+-- 2. СТВОРЕННЯ ТАБЛИЦЬ
+
+-- Таблиця "Маршрути" (Routes)
+CREATE TABLE Routes (
+    RouteID INT PRIMARY KEY IDENTITY(1,1),
+    Country NVARCHAR(50) NOT NULL,
+    Climate NVARCHAR(50),
+    Duration INT,            -- Тривалість (днів)
+    Hotel NVARCHAR(50),      -- Готель
+    Price DECIMAL(10, 2) NOT NULL
+);
+
+-- Таблиця "Клієнти" (Clients)
+CREATE TABLE Clients (
+    ClientID INT PRIMARY KEY IDENTITY(1,1),
+    LastName NVARCHAR(50) NOT NULL,
+    FirstName NVARCHAR(50) NOT NULL,
+    MiddleName NVARCHAR(50),
+    Address NVARCHAR(100),
+    Phone NVARCHAR(20)
+);
+
+-- Таблиця "Путівки" (Vouchers)
+CREATE TABLE Vouchers (
+    VoucherID INT PRIMARY KEY IDENTITY(1,1),
+    RouteID INT NOT NULL,
+    ClientID INT NOT NULL,
+    DepartureDate DATE NOT NULL,
+    Quantity INT DEFAULT 1,           -- Кількість людей
+    Discount DECIMAL(10, 2) DEFAULT 0, -- Знижка (сума або %)
+    TotalCost DECIMAL(10, 2),         -- Підсумкова вартість
+    
+    CONSTRAINT FK_Vouchers_Routes FOREIGN KEY (RouteID)
+        REFERENCES Routes (RouteID),
+    CONSTRAINT FK_Vouchers_Clients FOREIGN KEY (ClientID)
+        REFERENCES Clients (ClientID)
+);
+GO
+
+-- 3. ЗАПОВНЕННЯ ДАНИМИ (12+ записів)
+
+-- 3.1. Маршрути
+INSERT INTO Routes (Country, Climate, Duration, Hotel, Price) VALUES 
+(N'Туреччина', N'Субтропічний', 7, N'Royal Hotel 5*', 15000.00),
+(N'Єгипет', N'Тропічний', 10, N'Pyramids View 4*', 12500.00),
+(N'Італія', N'Середземноморський', 5, N'Roma Plaza 3*', 21000.00),
+(N'Іспанія', N'Субтропічний', 8, N'Barcelona Apts', 25000.00),
+(N'Греція', N'Середземноморський', 7, N'Zeus Resort 4*', 18500.00),
+(N'Франція', N'Помірний', 6, N'Paris Centre 3*', 28000.00),
+(N'Таїланд', N'Тропічний', 12, N'Thai Village', 45000.00),
+(N'ОАЕ', N'Пустельний', 7, N'Dubai Tower 5*', 35000.00),
+(N'Болгарія', N'Помірний', 9, N'Sunny Beach 4*', 11000.00),
+(N'Хорватія', N'Середземноморський', 7, N'Adriatic Villa', 23000.00),
+(N'Чорногорія', N'Середземноморський', 10, N'Montenegro View', 19500.00),
+(N'Кіпр', N'Субтропічний', 8, N'Cyprus Sun 5*', 27000.00);
+
+-- 3.2. Клієнти
+INSERT INTO Clients (LastName, FirstName, MiddleName, Address, Phone) VALUES 
+(N'Коваленко', N'Іван', N'Петрович', N'м. Київ, вул. Хрещатик 1', N'+380501112233'),
+(N'Бондаренко', N'Олена', N'Іванівна', N'м. Львів, пл. Ринок 10', N'+380672223344'),
+(N'Ткаченко', N'Сергій', N'Олександрович', N'м. Одеса, вул. Дерибасівська 5', N'+380933334455'),
+(N'Шевченко', N'Марія', N'Миколаївна', N'м. Харків, вул. Сумська 12', N'+380504445566'),
+(N'Мельник', N'Андрій', N'Вікторович', N'м. Дніпро, пр. Яворницького 50', N'+380975556677'),
+(N'Олійник', N'Наталія', N'Юріївна', N'м. Запоріжжя, пр. Соборний 100', N'+380636667788'),
+(N'Лисенко', N'Олександр', N'Васильович', N'м. Вінниця, вул. Соборна 25', N'+380997778899'),
+(N'Бойко', N'Ірина', N'Сергіївна', N'м. Полтава, вул. Шевченка 30', N'+380668889900'),
+(N'Кравченко', N'Володимир', N'Дмитрович', N'м. Чернігів, вул. Миру 15', N'+380989990011'),
+(N'Гаврилюк', N'Тетяна', N'Павлівна', N'м. Черкаси, бул. Шевченка 200', N'+380681011122'),
+(N'Поліщук', N'Оксана', N'Володимирівна', N'м. Житомир, вул. Київська 45', N'+380502022233'),
+(N'Мороз', N'Віктор', N'Андрійович', N'м. Суми, вул. Харківська 8', N'+380933033344');
+
+-- 3.3. Путівки (Зв'язок клієнтів і маршрутів)
+INSERT INTO Vouchers (RouteID, ClientID, DepartureDate, Quantity, Discount, TotalCost) VALUES 
+(1, 1, '2025-06-01', 2, 0, 30000.00),   
+(2, 2, '2025-06-05', 1, 500, 12000.00), 
+(3, 3, '2025-06-10', 2, 0, 42000.00),   
+(4, 4, '2025-06-15', 3, 1000, 74000.00), 
+(5, 5, '2025-07-01', 1, 0, 18500.00),   
+(6, 6, '2025-07-05', 2, 0, 56000.00),   
+(7, 7, '2025-07-12', 1, 2000, 43000.00), 
+(8, 8, '2025-08-01', 2, 0, 70000.00),   
+(9, 9, '2025-08-10', 3, 0, 33000.00),   
+(10, 10, '2025-08-15', 2, 0, 46000.00), 
+(11, 11, '2025-09-01', 1, 500, 19000.00), 
+(12, 12, '2025-09-10', 2, 0, 54000.00);
+GO
