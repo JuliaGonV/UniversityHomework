@@ -5,6 +5,13 @@ namespace GasSupplySystem.Services;
 
 public class AuthService
 {
+    private static User _user;
+
+    public static User GetCurrent()
+    {
+        return _user;
+    }
+
     public static User Login(string login, string password)
     {
         using var conn = new SqlConnection(Db.ConnectionString);
@@ -20,11 +27,13 @@ public class AuthService
         using var r = cmd.ExecuteReader();
         if (!r.Read()) return null;
 
-        return new User
+        _user = new User
         {
             UserId = (int)r["UserId"],
             Login = r["Login"].ToString(),
             Role = r["Role"].ToString()
         };
+
+        return _user;
     }
 }
