@@ -1,0 +1,72 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001deb89fac00 .scope module, "multiplexer_tb" "multiplexer_tb" 2 4;
+ .timescale -9 -9;
+v000001deb8a44610_0 .net "Out", 7 0, L_000001deb8a12e00;  1 drivers
+v000001deb8a446b0_0 .var "X0", 7 0;
+v000001deb8a44750_0 .var "X1", 7 0;
+v000001deb8a447f0_0 .var "Y0", 0 0;
+v000001deb8a12d60_0 .var "Y1", 0 0;
+S_000001deb89fc300 .scope module, "uut_inst" "multiplexer" 2 11, 3 1 0, S_000001deb89fac00;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 8 "X0";
+    .port_info 1 /INPUT 8 "X1";
+    .port_info 2 /INPUT 1 "Y0";
+    .port_info 3 /INPUT 1 "Y1";
+    .port_info 4 /OUTPUT 8 "Out";
+L_000001deb8a356b0 .functor XOR 1, v000001deb8a447f0_0, v000001deb8a12d60_0, C4<0>, C4<0>;
+v000001deb89fad90_0 .net "Out", 7 0, L_000001deb8a12e00;  alias, 1 drivers
+v000001deb89f95b0_0 .net "X0", 7 0, v000001deb8a446b0_0;  1 drivers
+v000001deb89fa690_0 .net "X1", 7 0, v000001deb8a44750_0;  1 drivers
+v000001deb89fa730_0 .net "Y0", 0 0, v000001deb8a447f0_0;  1 drivers
+v000001deb89fc490_0 .net "Y1", 0 0, v000001deb8a12d60_0;  1 drivers
+v000001deb89fc530_0 .net "selector", 0 0, L_000001deb8a356b0;  1 drivers
+L_000001deb8a12e00 .functor MUXZ 8, v000001deb8a44750_0, v000001deb8a446b0_0, L_000001deb8a356b0, C4<>;
+    .scope S_000001deb89fac00;
+T_0 ;
+    %vpi_call 2 20 "$dumpfile", "multiplexer_tb.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001deb89fac00 {0 0 0};
+    %pushi/vec4 240, 0, 8;
+    %store/vec4 v000001deb8a446b0_0, 0, 8;
+    %pushi/vec4 15, 0, 8;
+    %store/vec4 v000001deb8a44750_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001deb8a447f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001deb8a12d60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$display", "%0t\011X0=%b X1=%b Y0=%b Y1=%b Out=%b", $time, v000001deb8a446b0_0, v000001deb8a44750_0, v000001deb8a447f0_0, v000001deb8a12d60_0, v000001deb8a44610_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001deb8a447f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001deb8a12d60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 32 "$display", "%0t\011X0=%b X1=%b Y0=%b Y1=%b Out=%b", $time, v000001deb8a446b0_0, v000001deb8a44750_0, v000001deb8a447f0_0, v000001deb8a12d60_0, v000001deb8a44610_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001deb8a447f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001deb8a12d60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 39 "$display", "%0t\011X0=%b X1=%b Y0=%b Y1=%b Out=%b", $time, v000001deb8a446b0_0, v000001deb8a44750_0, v000001deb8a447f0_0, v000001deb8a12d60_0, v000001deb8a44610_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001deb8a447f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001deb8a12d60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 46 "$display", "%0t\011X0=%b X1=%b Y0=%b Y1=%b Out=%b", $time, v000001deb8a446b0_0, v000001deb8a44750_0, v000001deb8a447f0_0, v000001deb8a12d60_0, v000001deb8a44610_0 {0 0 0};
+    %vpi_call 2 51 "$display", "Test complete" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "multiplexer_tb.v";
+    "./multiplexer.v";

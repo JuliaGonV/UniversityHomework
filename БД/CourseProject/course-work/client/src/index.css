@@ -1,0 +1,285 @@
+:root {
+  font-family:
+    Inter, "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #1e293b;
+  background: #eef3f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --app-bg:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0)),
+    linear-gradient(135deg, #e7eef3 0%, #f5f7f2 48%, #edf3f7 100%);
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --surface-muted: #f6f8fb;
+  --border: #d9e2ea;
+  --border-strong: #c5d2dc;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --primary: #256f7d;
+  --primary-hover: #1f5e6a;
+  --primary-soft: #e5f1f3;
+  --danger: #c2413a;
+  --danger-hover: #a93530;
+  --warning: #b7791f;
+  --warning-hover: #946315;
+  --success: #2f855a;
+  --radius-page: 14px;
+  --radius-control: 9px;
+  --radius-card: 10px;
+  --shadow-page: 0 18px 48px rgba(30, 41, 59, 0.12);
+  --shadow-card: 0 8px 24px rgba(30, 41, 59, 0.08);
+  --shadow-soft: 0 3px 12px rgba(30, 41, 59, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(37, 111, 125, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 111, 125, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 78%);
+}
+
+a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+  color: #172033;
+}
+
+button {
+  font-family: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+input,
+select,
+textarea,
+[class*="input"],
+[class*="Input"],
+[class*="select"],
+[class*="Select"],
+[class*="textarea"],
+[class*="Textarea"] {
+  border-color: var(--border-strong) !important;
+  border-radius: var(--radius-control) !important;
+  background-color: #fbfdff !important;
+  color: var(--text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+[class*="input"]:focus,
+[class*="Input"]:focus,
+[class*="select"]:focus,
+[class*="Select"]:focus,
+[class*="textarea"]:focus,
+[class*="Textarea"]:focus {
+  border-color: var(--primary) !important;
+  outline: 3px solid rgba(37, 111, 125, 0.16) !important;
+  box-shadow: 0 0 0 1px rgba(37, 111, 125, 0.1) !important;
+}
+
+button,
+[class*="Button"],
+[class*="button"] {
+  border-radius: var(--radius-control) !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease !important;
+}
+
+button:hover,
+[class*="Button"]:hover,
+[class*="button"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 18px rgba(30, 41, 59, 0.13) !important;
+}
+
+button:active,
+[class*="Button"]:active,
+[class*="button"]:active {
+  transform: translateY(0) !important;
+}
+
+.submit-button,
+[class*="submitButton"],
+[class*="primaryButton"],
+[class*="createButton"],
+[class*="reportButton"],
+[class*="inlineButton"],
+[class*="form"] button,
+[class*="filters"] button {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.submit-button:hover,
+[class*="submitButton"]:hover,
+[class*="primaryButton"]:hover,
+[class*="createButton"]:hover,
+[class*="reportButton"]:hover,
+[class*="inlineButton"]:hover,
+[class*="form"] button:hover,
+[class*="filters"] button:hover {
+  background: var(--primary-hover) !important;
+}
+
+[class*="backButton"] {
+  background: #ffffff !important;
+  border-color: var(--border-strong) !important;
+  color: var(--primary) !important;
+}
+
+[class*="editButton"],
+button[class*="edit"] {
+  background: var(--warning) !important;
+  color: #ffffff !important;
+}
+
+[class*="editButton"]:hover,
+button[class*="edit"]:hover {
+  background: var(--warning-hover) !important;
+}
+
+[class*="deleteButton"],
+button[class*="delete"],
+.logout-button {
+  background: var(--danger) !important;
+  color: #ffffff !important;
+}
+
+[class*="deleteButton"]:hover,
+button[class*="delete"]:hover,
+.logout-button:hover {
+  background: var(--danger-hover) !important;
+}
+
+[class*="announcementsPage"],
+[class*="apartmentPage"],
+[class*="expensesPage"],
+[class*="maintenanceRequestsPage"],
+[class*="reportsPage"],
+[class*="buildingsContainer"],
+[class*="residentsContainer"],
+[class*="homepage-content"],
+[class*="_container_"],
+[class*="_page_"],
+[class*="reportsPage"],
+[class*="buildingsContainer"],
+[class*="residentsContainer"],
+.login-form-container,
+.register-form-container {
+  background: var(--surface) !important;
+  border: 1px solid rgba(217, 226, 234, 0.9) !important;
+  border-radius: var(--radius-page) !important;
+  box-shadow: var(--shadow-page) !important;
+  color: var(--text) !important;
+  backdrop-filter: blur(10px);
+}
+
+[class*="card"],
+[class*="Card"],
+[class*="Item"],
+[class*="item"],
+[class*="reportPreview"],
+[class*="createForm"] {
+  background: var(--surface-strong) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+table {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+th,
+td {
+  border-color: #e5ebf0 !important;
+}
+
+th {
+  background: #eef4f6 !important;
+  color: #253445 !important;
+}
+
+tr:hover td,
+tr:hover {
+  background-color: #f7fbfc !important;
+}
+
+[class*="error"] {
+  color: var(--danger) !important;
+}
+
+@media (max-width: 768px) {
+  [class*="announcementsPage"],
+  [class*="apartmentPage"],
+  [class*="expensesPage"],
+  [class*="maintenanceRequestsPage"],
+  [class*="reportsPage"],
+  [class*="buildingsContainer"],
+  [class*="residentsContainer"],
+  [class*="reportsPage"],
+  [class*="buildingsContainer"],
+  [class*="residentsContainer"],
+  [class*="_container_"],
+  [class*="_page_"],
+  [class*="homepage-content"],
+  .login-form-container,
+  .register-form-container {
+    margin: 14px !important;
+    padding: 18px !important;
+  }
+}

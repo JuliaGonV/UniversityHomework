@@ -1,0 +1,156 @@
+.reportsPage {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #444;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.settingsPanel {
+  border: 1px solid #e2e2e2;
+  background: #fafafa;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.settingsRow {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.pathValue {
+  font-size: 14px;
+  color: #444;
+  word-break: break-all;
+}
+
+.settingsButton {
+  background-color: #6e7dff;
+  color: white;
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settingsButton:hover {
+  background-color: #5a6cc2;
+}
+
+.settingsMessage {
+  color: #2e7d32;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.settingsError {
+  color: #c0392b;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.reportButton {
+  background-color: #6e7dff;
+  color: white;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+.reportButton:hover {
+  background-color: #5a6cc2;
+  transform: scale(1.05);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.checkboxLabel input {
+  margin-right: 8px;
+}
+
+.reportPreview {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  white-space: pre-wrap;
+}
+
+/* Печать */
+@media print {
+  .reportsPage {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .actions,
+  .checkboxLabel,
+  .settingsPanel {
+    display: none;
+  }
+
+  .reportPreview {
+    border: none;
+    background: none;
+    font-size: 14px;
+  }
+}
+
+/* Альтернативный стиль при включенном чекбоксе */
+.printMode .actions,
+.printMode .checkboxLabel,
+.printMode .settingsPanel {
+  display: none;
+}
+.backButton {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}

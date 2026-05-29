@@ -1,0 +1,14 @@
+INSERT INTO users (username, password_hash, email, role) VALUES
+('admin1', 'hash_admin1', 'admin1@example.com', 'admin'),
+('admin2', 'hash_admin2', 'admin2@example.com', 'admin'),
+
+('worker_john', 'hash_worker1', 'john.worker@example.com', 'worker'),
+('worker_mike', 'hash_worker2', 'mike.worker@example.com', 'worker'),
+('worker_alex', 'hash_worker3', 'alex.worker@example.com', 'worker'),
+
+('resident_anna', 'hash_res1', 'anna@example.com', 'resident'),
+('resident_ivan', 'hash_res2', 'ivan@example.com', 'resident'),
+('resident_maria', 'hash_res3', 'maria@example.com', 'resident'),
+('resident_oleg', 'hash_res4', 'oleg@example.com', 'resident'),
+('resident_sophia', 'hash_res5', 'sophia@example.com', 'resident'),
+('resident_dmytro', 'hash_res6', 'dmytro@example.com', 'resident');

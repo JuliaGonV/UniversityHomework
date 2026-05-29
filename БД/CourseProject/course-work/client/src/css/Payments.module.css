@@ -1,0 +1,153 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buildingsContainer {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #444;
+}
+
+.residentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.styledInput {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+.styledInput:focus {
+  outline: none;
+  border-color: #6e7dff;
+}
+
+.submitButton {
+  background-color: #6e7dff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #5a6cc2;
+  transform: scale(1.03);
+}
+
+.residentsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.residentsTable th,
+.residentsTable td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.residentsTable th {
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.residentsTable tr:hover {
+  background-color: #f9f9f9;
+}
+
+.actionButton {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.editButton {
+  background-color: #f0ad4e;
+  margin-right: 8px;
+}
+
+.editButton:hover {
+  background-color: #ec971f;
+  transform: scale(1.05);
+}
+
+.deleteButton {
+  background-color: #d9534f;
+}
+
+.deleteButton:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+.backButton {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+.searchInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #6e7dff;
+}
+
+.filtersRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 18px 0 24px;
+}

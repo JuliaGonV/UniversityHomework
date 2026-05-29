@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1653" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-75" parent="1" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-76" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-75" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-91" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-76" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Init()" vertex="1">
+          <mxGeometry relative="1" x="0.1667" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-82" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="IjN5gcT-K-uv_bf7MyTA-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-92" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-82" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="ProcessSensorSignal(sensorId)" vertex="1">
+          <mxGeometry relative="1" x="-0.1215" y="-2" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-89" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="IjN5gcT-K-uv_bf7MyTA-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-94" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-89" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="ProcessCardInserted(card)" vertex="1">
+          <mxGeometry relative="1" x="0.0857" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-77" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="STOP (початкой стан, прохід закритий)" vertex="1">
+          <mxGeometry height="60" width="135" x="287.5" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-83" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.804;entryY=0.967;entryDx=0;entryDy=0;entryPerimeter=0;" target="IjN5gcT-K-uv_bf7MyTA-77">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="396" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-93" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-83" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Датчики вільні" vertex="1">
+          <mxGeometry relative="1" x="-0.1355" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-78" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="ALARM (Порушення, срена увімкнена)" vertex="1">
+          <mxGeometry height="60" width="120" x="530" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-88" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="IjN5gcT-K-uv_bf7MyTA-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-95" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-88" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Помилка" vertex="1">
+          <mxGeometry relative="1" x="-0.1927" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-90" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="IjN5gcT-K-uv_bf7MyTA-80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-96" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-90" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Картка валідна" vertex="1">
+          <mxGeometry relative="1" x="-0.4933" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-79" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="CHECK_CARD (Зчитування та валідація)" vertex="1">
+          <mxGeometry height="60" width="120" x="110" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-87" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IjN5gcT-K-uv_bf7MyTA-81">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-98" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-87" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="processSensorSignal(sensorId)" vertex="1">
+          <mxGeometry relative="1" x="-0.5294" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-80" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="WAITING_FOR_PASS (картка успішна, турнікет відкритий)" vertex="1">
+          <mxGeometry height="60" width="130" x="120" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-85" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.569;entryY=1.033;entryDx=0;entryDy=0;entryPerimeter=0;" target="IjN5gcT-K-uv_bf7MyTA-81">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="440" />
+              <mxPoint x="490" y="520" />
+              <mxPoint x="364" y="520" />
+            </Array>
+            <mxPoint x="480" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-97" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-85" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ігнорування сугналу" vertex="1">
+          <mxGeometry relative="1" x="-0.2716" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-86" edge="1" parent="1" source="IjN5gcT-K-uv_bf7MyTA-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="IjN5gcT-K-uv_bf7MyTA-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-99" connectable="0" parent="IjN5gcT-K-uv_bf7MyTA-86" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="processTimeout()" vertex="1">
+          <mxGeometry relative="1" x="-0.3217" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IjN5gcT-K-uv_bf7MyTA-81" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="PASSING (пасажир у зоні датчиків, відлік 5 сек.)" vertex="1">
+          <mxGeometry height="60" width="130" x="290" y="410" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

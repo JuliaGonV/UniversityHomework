@@ -1,0 +1,23 @@
+[
+  {
+    "backup_id": 1779653223454,
+    "backup_type": "copy",
+    "backup_date": "2026-05-24T20:07:03.454Z",
+    "performed_by": 1,
+    "notes": "Резервна копія:  (db_backup_2026-05-24T20-07-03-178Z.dump) [dir:C:\\Users\\Root\\Downloads\\dd] [path:C:\\Users\\Root\\Downloads\\dd\\db_backup_2026-05-24T20-07-03-178Z.dump]"
+  },
+  {
+    "backup_id": 1779656041729,
+    "backup_type": "copy",
+    "backup_date": "2026-05-24T20:54:01.729Z",
+    "performed_by": 1,
+    "notes": "Резервна копія:  (db_backup_2026-05-24T20-54-01-535Z.dump) [dir:C:\\Users\\Root\\Downloads\\dd] [path:C:\\Users\\Root\\Downloads\\dd\\db_backup_2026-05-24T20-54-01-535Z.dump]"
+  },
+  {
+    "backup_id": 1779656043914,
+    "backup_type": "recover",
+    "backup_date": "2026-05-24T20:54:03.914Z",
+    "performed_by": 1,
+    "notes": "Відновлення з: db_backup_2026-05-24T20-54-01-535Z.dump [dir:C:\\Users\\Root\\Downloads\\dd] [path:C:\\Users\\Root\\Downloads\\dd\\db_backup_2026-05-24T20-54-01-535Z.dump]"
+  }
+]

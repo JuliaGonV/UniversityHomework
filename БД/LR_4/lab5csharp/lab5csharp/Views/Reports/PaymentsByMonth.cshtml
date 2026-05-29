@@ -1,0 +1,20 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Payments for Month: @ViewBag.Month</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr><th>Username</th><th>Amount</th><th>Payment Date</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Username</td>
+                <td>@item.Amount.ToString("N2")</td>
+                <td>@item.PaymentDate.ToShortDateString()</td>
+                <td>@item.Purpose</td>
+            </tr>
+        }
+    </tbody>
+</table>

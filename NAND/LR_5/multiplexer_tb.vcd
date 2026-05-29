@@ -1,0 +1,54 @@
+$date
+	Wed May 27 21:54:34 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module multiplexer_tb $end
+$var wire 8 ! Out [7:0] $end
+$var reg 8 " X0 [7:0] $end
+$var reg 8 # X1 [7:0] $end
+$var reg 1 $ Y0 $end
+$var reg 1 % Y1 $end
+$scope module uut_inst $end
+$var wire 8 & X0 [7:0] $end
+$var wire 8 ' X1 [7:0] $end
+$var wire 1 $ Y0 $end
+$var wire 1 % Y1 $end
+$var wire 1 ( selector $end
+$var wire 8 ) Out [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1111 )
+0(
+b1111 '
+b11110000 &
+0%
+0$
+b1111 #
+b11110000 "
+b1111 !
+$end
+#10
+b11110000 !
+b11110000 )
+1(
+1%
+#20
+0%
+1$
+#30
+b1111 !
+b1111 )
+0(
+1%
+#40

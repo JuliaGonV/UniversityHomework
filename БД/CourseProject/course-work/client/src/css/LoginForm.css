@@ -1,0 +1,124 @@
+/* Общие стили для всей страницы (можно вынести в отдельный global.css) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--app-bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.login-form-container {
+  background-color: rgba(255, 255, 255, 0.94);
+  padding: 30px;
+  border-radius: var(--radius-page);
+  box-shadow: var(--shadow-page);
+  width: 100%;
+  max-width: 400px; /* Немного уменьшим максимальную ширину, если логин может быть проще */
+  animation: fadeIn 0.8s ease-in-out;
+  margin: 56px auto 24px;
+}
+
+.login-form-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--border-strong);
+  font-size: 16px;
+  outline: none;
+  background-color: #fbfdff;
+  transition: all 0.3s;
+}
+
+.input-field:focus {
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 111, 125, 0.16);
+}
+
+.submit-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.submit-button:active {
+  transform: scale(1);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center; /* Центрируем сообщение об ошибке */
+}
+
+/* Ссылка на регистрацию */
+.login-form > div {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-form a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

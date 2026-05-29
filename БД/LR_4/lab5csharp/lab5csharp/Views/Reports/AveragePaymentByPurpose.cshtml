@@ -1,0 +1,18 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Average Payment By Purpose</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Purpose</th><th>Average Amount</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Purpose</td>
+                <td>@item.Average.ToString("N2")</td>
+            </tr>
+        }
+    </tbody>
+</table>

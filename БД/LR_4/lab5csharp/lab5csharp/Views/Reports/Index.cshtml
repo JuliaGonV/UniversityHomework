@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+}
+
+<h1>Reports</h1>
+
+<div class="list-group">
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("PaymentsByUser", "Reports")" class="">
+            1. Total Payments by User
+        </a>
+        <a href="@Url.Action("PaymentsByUserPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("RequestsByStatus", "Reports")" class="">
+            2. Number of Requests by Status
+        </a>
+        <a href="@Url.Action("RequestsByStatusPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("UsersWithApartments", "Reports")" class="">
+            3. Users and Their Apartments
+        </a>
+        <a href="@Url.Action("UsersWithApartmentsPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="list-group-item">
+        <form method="get" asp-controller="Reports" asp-action="PaymentsByMonth" class="form-inline justify-content-between align-items-center">
+            <label for="monthInput" class="mr-2 mb-0">4. Payments for Selected Month:</label>
+            <input type="number" min="1" max="12" id="monthInput" name="month" class="form-control mr-2" placeholder="Enter month (1-12)" required />
+            <button type="submit" class="btn btn-primary mr-2">Show</button>
+            @* Для PDF нужна отдельная кнопка, которая формирует ссылку с month *@
+            <button type="button" class="btn btn-danger" id="pdfMonthBtn">PDF</button>
+        </form>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("ApartmentsWithBuildings", "Reports")" class="">
+            5. Apartments and Buildings
+        </a>
+        <a href="@Url.Action("ApartmentsWithBuildingsPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("AveragePaymentByPurpose", "Reports")" class="">
+            6. Average Payment by Purpose
+        </a>
+        <a href="@Url.Action("AveragePaymentByPurposePdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("BuildingsWithApartmentsCount", "Reports")" class="">
+            7. Building Floors and Number of Apartments
+        </a>
+        <a href="@Url.Action("BuildingsWithApartmentsCountPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("LatestRequests", "Reports")" class="">
+            8. Last 10 Requests
+        </a>
+        <a href="@Url.Action("LatestRequestsPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("UsersWithoutPayments", "Reports")" class="">
+            9. Users Without Payments
+        </a>
+        <a href="@Url.Action("UsersWithoutPaymentsPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center list-group-item">
+        <a href="@Url.Action("TotalAreaByBuilding", "Reports")" class="">
+            10. Total Apartment Area by Building
+        </a>
+        <a href="@Url.Action("TotalAreaByBuildingPdf", "Reports")" class="btn btn-sm btn-danger" target="_blank" title="Download PDF">PDF</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Кнопка PDF для отчёта по месяцу — чтобы сформировать правильную ссылку с параметром month
+        document.getElementById("pdfMonthBtn").addEventListener("click", function () {
+            var monthInput = document.getElementById("monthInput").value;
+            if (monthInput < 1 || monthInput > 12 || !monthInput) {
+                alert("Введи нормальный месяц от 1 до 12!");
+                return;
+            }
+            var url = '@Url.Action("PaymentsByMonthPdf", "Reports")' + "?month=" + monthInput;
+            window.open(url, "_blank");
+        });
+    </script>
+}

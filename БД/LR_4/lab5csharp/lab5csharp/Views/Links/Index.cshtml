@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Main";
+    var userRole = Context.Session.GetString("UserRole");
+}
+
+<h1 class="mb-4">Main</h1>
+
+<div class="list-group">
+    <a asp-controller="Apartments" asp-action="Index" class="list-group-item list-group-item-action">
+        Apartments
+    </a>
+    <a asp-controller="Buildings" asp-action="Index" class="list-group-item list-group-item-action">
+        Buildings
+    </a>
+    <a asp-controller="Payments" asp-action="Index" class="list-group-item list-group-item-action">
+        Payments
+    </a>
+    <a asp-controller="ServiceRequests" asp-action="Index" class="list-group-item list-group-item-action">
+        Service Requests
+    </a>
+
+    @* Show link only if role = admin *@
+    @if (userRole == "admin")
+    {
+        <a asp-controller="Reports" asp-action="Index" class="list-group-item list-group-item-action">
+            Reports
+        </a>
+    }
+</div>

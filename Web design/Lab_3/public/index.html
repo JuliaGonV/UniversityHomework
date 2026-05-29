@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content starbucks-modal">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">
+                    Starbucks Product
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <img
+                    id="modalImage"
+                    class="img-fluid rounded mb-3"
+                    src=""
+                    alt="">
+
+                <p id="modalDescription"></p>
+
+                <p class="mb-2">
+                    <strong>Категорія:</strong>
+                    <span id="modalCategory"></span>
+                </p>
+
+                <p class="mb-2">
+                    <strong>Рейтинг:</strong>
+                    ⭐ <span id="modalRating"></span>
+                </p>
+
+                <h4 class="modal-price">
+                    <span id="modalPrice"></span> грн
+                </h4>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Starbucks</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cards">
+                            Каталог
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#popularity">
+                            Популярні напої
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">
+                            Контакти
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            id="themeToggle"
+                            class="btn btn-outline-light ms-2">
+                            Темна тема
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="cards" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Каталог</h2>
+                <!-- Панель керування (фільтр/сортування) — КРОК 7 буде заповнювати цей блок -->
+                <div id="filter-controls" class="mb-4"></div>
+                <div id="sort-controls" class="mb-4"></div>
+                <!-- Картки з'являться тут через JavaScript -->
+                <!-- row — рядок сітки, g-4 — відступи між картками -->
+                <div id="cards-container" class="row g-4"></div>
+            </div>
+        </section>
+
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">FAQ Starbucks</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq1">
+                                Які напої найпопулярніші?
+                            </button>
+                        </h2>
+                        <div
+                            id="faq1"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Найпопулярніші напої Starbucks —
+                                Caramel Macchiato, Cold Brew та Frappuccino.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq2">
+
+                                Чи є рослинне молоко?
+                            </button>
+                        </h2>
+                        <div
+                            id="faq2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+                                Так! Доступні вівсяне, мигдальне,
+                                кокосове та соєве молоко.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq3">
+
+                                Чи можна персоналізувати напій?
+                            </button>
+                        </h2>
+                        <div
+                            id="faq3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ви можете змінювати сиропи,
+                                кількість еспресо та тип молока.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="popularity" class="py-5">
+            <div class="container">
+                <h2 class="mb-5">
+                    Популярні напої
+                </h2>
+                <div id="popular-container"></div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="bg-dark text-light text-center py-3">
+        <p>&copy; 2026 Starbucks</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

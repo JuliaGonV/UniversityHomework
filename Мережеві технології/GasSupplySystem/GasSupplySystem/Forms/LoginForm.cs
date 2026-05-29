@@ -17,8 +17,8 @@ namespace GasSupplySystem.Forms
             FormBorderStyle = FormBorderStyle.FixedDialog;
             StartPosition = FormStartPosition.CenterScreen;
 
-            Label lblLogin = new Label { Text = "Логін", Left = 30, Top = 30, Width = 40 };
-            Label lblPass = new Label { Text = "Пароль", Left = 30, Top = 60, Width = 40 };
+            Label lblLogin = new Label { Text = "Логін", Left = 20, Top = 30, Width = 40 };
+            Label lblPass = new Label { Text = "Пароль", Left = 20, Top = 60, Width = 60 };
 
             txtLogin.SetBounds(90, 27, 170, 20);
             txtPassword.SetBounds(90, 57, 170, 20);

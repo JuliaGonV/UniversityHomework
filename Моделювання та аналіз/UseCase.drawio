@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="u3JVTtE-CGkvVwylNGYY">
+    <mxGraphModel dx="1945" dy="874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="470" width="610" x="130" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Пасажир" vertex="1">
+          <mxGeometry height="60" width="30" x="40" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Пройти через турнікет" vertex="1">
+          <mxGeometry height="70" width="180" x="190" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-34" edge="1" parent="1" source="RiMzIcBI9BKN9nrlXakk-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="RiMzIcBI9BKN9nrlXakk-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-35" connectable="0" parent="RiMzIcBI9BKN9nrlXakk-34" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1307" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Оплатити прохід" vertex="1">
+          <mxGeometry height="70" width="180" x="190" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-13" edge="1" parent="1" source="RiMzIcBI9BKN9nrlXakk-2" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="RiMzIcBI9BKN9nrlXakk-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="140" y="170" as="sourcePoint" />
+            <mxPoint x="680" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-15" edge="1" parent="1" source="RiMzIcBI9BKN9nrlXakk-2" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="RiMzIcBI9BKN9nrlXakk-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="90" y="254" as="sourcePoint" />
+            <mxPoint x="220" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-31" edge="1" parent="1" source="RiMzIcBI9BKN9nrlXakk-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="RiMzIcBI9BKN9nrlXakk-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-32" connectable="0" parent="RiMzIcBI9BKN9nrlXakk-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1569" y="3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-30" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Зафіксувати несанкціонований прохід" vertex="1">
+          <mxGeometry height="70" width="180" x="460" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-33" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Зберегти інформацію про оплачений прохід" vertex="1">
+          <mxGeometry height="70" width="180" x="460" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-37" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="АСУ Метрополітену" vertex="1">
+          <mxGeometry height="60" width="30" x="50" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-39" edge="1" parent="1" source="RiMzIcBI9BKN9nrlXakk-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="RiMzIcBI9BKN9nrlXakk-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RiMzIcBI9BKN9nrlXakk-38" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Передати інформацію в АСУ" vertex="1">
+          <mxGeometry height="70" width="180" x="190" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,318 @@
+/* Універсальний селектор */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Селектор елемента */
+body {
+  font-family: Georgia, serif;
+  background-color: #faf8f3;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+/* Селектор за id */
+#hero-title {
+  font-size: 4rem;
+  letter-spacing: 0.18em;
+}
+
+/* Селектор за класом */
+.intro {
+  font-style: italic;
+  color: #2d4a3e;
+}
+
+/* Комбінований селектор */
+p.intro {
+  border-left: 3px solid #cba135;
+  padding-left: 0.8em;
+  margin-bottom: 1.2em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(135deg, #1e3932 0%, #00704a 100%);
+  color: white;
+  text-align: center;
+  padding: 4em 2em;
+}
+
+.header-icon {
+  font-size: 3.5em;
+  margin-bottom: 0.2em;
+}
+
+nav {
+  background-color: #1e3932;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  padding: 1em;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #00704a;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2em;
+}
+
+section {
+  margin-bottom: 4em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Palatino Linotype", serif;
+  margin-bottom: 0.6em;
+}
+
+h2 {
+  color: #1e3932;
+  border-bottom: 3px solid #00704a;
+  padding-bottom: 0.4em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.hero-intro-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2em;
+}
+
+aside {
+  background-color: #1e3932;
+  color: white;
+  padding: 1.5em;
+  border-left: 5px solid #cba135;
+}
+
+aside h3 {
+  color: #ffe082;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin-bottom: 0.8em;
+}
+
+blockquote {
+  background-color: #f0f7f4;
+  border-left: 5px solid #cba135;
+  padding: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+cite {
+  display: block;
+  text-align: right;
+  margin-top: 0.5em;
+  color: #00704a;
+  font-weight: bold;
+}
+
+figure {
+  margin-top: 1.5em;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+.drinks-grid,
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em;
+}
+
+article {
+  background-color: white;
+  border-left: 5px solid #00704a;
+  padding: 1.2em;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+article small {
+  color: #00704a;
+}
+
+details {
+  margin-top: 1.5em;
+  background-color: #f9fdf9;
+  padding: 1em;
+  border: 1px solid #d4e9e2;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #00704a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #1e3932;
+}
+
+thead {
+  background-color: #1e3932;
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #d4e9e2;
+  padding: 0.8em;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f0f7f4;
+}
+
+tfoot td {
+  background-color: #1e3932;
+  color: white;
+}
+
+mark {
+  background-color: #ffe082;
+  padding: 0.1em 0.3em;
+}
+
+pre {
+  background-color: #1e2d2a;
+  color: #d4e9e2;
+  padding: 1.5em;
+  overflow-x: auto;
+  border-radius: 5px;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 1em;
+  list-style: none;
+}
+
+menu li {
+  background-color: #d4e9e2;
+  padding: 0.3em 0.7em;
+  border-radius: 20px;
+}
+
+footer {
+  background-color: #1e3932;
+  color: white;
+  text-align: center;
+  padding: 2.5em 1em;
+}
+
+footer a {
+  color: #ffe082;
+}
+
+footer nav {
+  background: transparent;
+}
+
+address {
+  margin: 1em 0;
+  font-style: normal;
+}
+
+a {
+  color: #00704a;
+}
+
+hr {
+  margin: 1.5em 0;
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+dl {
+  margin-top: 1em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.schema-wrap {
+  margin-bottom: 1.5em;
+}
+
+@media (max-width: 768px) {
+
+  .hero-intro-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+}

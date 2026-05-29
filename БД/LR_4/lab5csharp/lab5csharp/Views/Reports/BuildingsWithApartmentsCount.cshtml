@@ -1,0 +1,19 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Buildings With Apartments Count</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Address</th><th>Number Of Floors</th><th>Apartments Count</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Address</td>
+                <td>@item.NumberOfFloors</td>
+                <td>@item.ApartmentsCount</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Caramel Macchiato",
+    "price": 109,
+    "category": "Гаряча кава",
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+    "description": "Ніжне молоко, еспресо та карамельний соус."
+  },
+  {
+    "id": 3,
+    "name": "Cold Brew",
+    "price": 99,
+    "category": "Холодні напої",
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c",
+    "description": "Холодне заварювання протягом 20 годин."
+  },
+  {
+    "id": 4,
+    "name": "Matcha Latte",
+    "price": 115,
+    "category": "Чай",
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002",
+    "description": "Японський чай матча."
+  },
+  {
+    "id": 5,
+    "name": "Frappuccino Vanilla",
+    "price": 135,
+    "category": "Фрапучино",
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699",
+    "description": "Освіжаючий вершковий напій."
+  },
+  {
+    "id": 6,
+    "name": "Caffe Latte",
+    "price": 95,
+    "category": "Гаряча кава",
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
+    "description": "Класичне поєднання еспресо та молока."
+  },
+  {
+    "id": 7,
+    "name": "Espresso",
+    "price": 65,
+    "category": "Гаряча кава",
+    "rating": 4.4,
+    "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+    "description": "Міцний класичний еспресо."
+  },
+  {
+    "id": 8,
+    "name": "Iced Americano",
+    "price": 89,
+    "category": "Холодні напої",
+    "rating": 4.3,
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+    "description": "Освіжаючий американо з льодом."
+  },
+  {
+    "id": 9,
+    "name": "Mocha",
+    "price": 119,
+    "category": "Гаряча кава",
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1494314671902-399b18174975",
+    "description": "Кава з шоколадом та вершками."
+  },
+  {
+    "id": 10,
+    "name": "Flat White",
+    "price": 105,
+    "category": "Гаряча кава",
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38",
+    "description": "Подвійний еспресо та ніжне молоко."
+  },
+  {
+    "id": 1779994266220,
+    "name": "New Coffee",
+    "price": 120,
+    "category": "Гаряча кава",
+    "rating": 4.5,
+    "image": "image.jpg",
+    "description": "New item"
+  },
+  {
+    "id": 1779994469895,
+    "name": "New Coffee 2",
+    "price": 120,
+    "category": "Гаряча кава",
+    "rating": 4.5,
+    "image": "image.jpg",
+    "description": "New item"
+  }
+]

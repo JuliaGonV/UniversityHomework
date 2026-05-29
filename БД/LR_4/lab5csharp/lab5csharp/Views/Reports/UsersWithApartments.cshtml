@@ -1,0 +1,18 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Users With Apartments</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Username</th><th>Apartment</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Username</td>
+                <td>@item.Apartment</td>
+            </tr>
+        }
+    </tbody>
+</table>

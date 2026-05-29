@@ -1,0 +1,65 @@
+$date
+	Wed May 27 22:26:41 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module calculator_tb $end
+$var wire 5 ! SUM [4:0] $end
+$var wire 7 " SEG [6:0] $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$scope module uut $end
+$var wire 4 % A [3:0] $end
+$var wire 4 & B [3:0] $end
+$var wire 5 ' SUM [4:0] $end
+$var wire 7 ( SEG [6:0] $end
+$scope module display $end
+$var wire 4 ) num [3:0] $end
+$var reg 7 * seg [6:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1101101 *
+b101 )
+b1101101 (
+b101 '
+b11 &
+b10 %
+b11 $
+b10 #
+b1101101 "
+b101 !
+$end
+#10
+b1101111 "
+b1101111 (
+b1101111 *
+b1001 )
+b101 $
+b101 &
+b1001 !
+b1001 '
+b100 #
+b100 %
+#20
+b1111111 "
+b1111111 (
+b1111111 *
+b1000 )
+b1 $
+b1 &
+b1000 !
+b1000 '
+b111 #
+b111 %
+#30

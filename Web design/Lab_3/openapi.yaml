@@ -1,0 +1,232 @@
+openapi: 3.0.3
+
+info:
+  title: Starbucks API
+  version: 1.0.0
+  description: API для каталогу напоїв Starbucks
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /api/items:
+    get:
+      summary: Отримати список товарів
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: Сортування товарів
+          schema:
+            type: string
+            enum:
+              - price-asc
+              - price-desc
+              - name
+              - rating
+          example: name
+        - in: query
+          name: search
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Список товарів
+          content:
+            application/json:
+              examples:
+                example1:
+                  value:
+                    - id: 1
+                      name: Caramel Macchiato
+                      price: 109
+                      category: Гаряча кава
+                      rating: 4.9
+                      image: image.jpg
+                      description: Coffee
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Item"
+
+    post:
+      summary: Створити товар
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ItemInput"
+            examples:
+              example1:
+                value:
+                  name: New Coffee
+                  price: 120
+                  category: Гаряча кава
+                  rating: 4.5
+                  image: image.jpg
+                  description: New item
+      responses:
+        "201":
+          description: Створено
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/items/{id}:
+    get:
+      summary: Отримати товар
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Один товар
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+              examples:
+                example1:
+                  value:
+                    id: 1
+                    name: Caramel Macchiato
+                    price: 109
+                    category: Гаряча кава
+                    rating: 4.9
+                    image: image.jpg
+                    description: Coffee
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    put:
+      summary: Оновити товар
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ItemInput"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    delete:
+      summary: Видалити товар
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Item:
+      type: object
+
+      required:
+        - id
+        - name
+        - price
+        - category
+        - rating
+
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        price:
+          type: number
+        category:
+          type: string
+        rating:
+          type: number
+        image:
+          type: string
+        description:
+          type: string
+
+    ItemInput:
+      type: object
+
+      required:
+        - name
+        - price
+        - category
+        - rating
+
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        category:
+          type: string
+        rating:
+          type: number
+        image:
+          type: string
+
+        description:
+          type: string
+
+    Error:
+      type: object
+
+      properties:
+        error:
+          type: string

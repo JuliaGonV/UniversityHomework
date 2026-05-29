@@ -1,0 +1,281 @@
+body {
+    font-family: Georgia, serif;
+    background-color: #faf8f3;
+    color: #1a1a1a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #1e3932 0%, #00704a 100%) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    color: #d4e9e2 !important;
+}
+
+.nav-link {
+    color: #d4e9e2 !important;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+h2 {
+    color: #1e3932;
+    font-weight: bold;
+    border-bottom: 3px solid #00704a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#filter-controls .btn {
+    border-color: #00704a;
+    color: #00704a;
+    font-weight: 600;
+}
+
+#filter-controls .btn:hover {
+    background-color: #00704a;
+    color: white;
+}
+
+#filter-controls .btn-success {
+    background-color: #00704a;
+    color: white;
+}
+
+#filter-controls .btn-success:hover {
+    background-color: #00704a;
+    color: white;
+}
+
+#sortSelect {
+    border: 2px solid #00704a;
+    border-radius: 10px;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.card {
+    border: none;
+    border-left: 5px solid #00704a;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 112, 74, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 112, 74, 0.18);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.3rem;
+}
+
+.card-title {
+    color: #1e3932;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.card-text {
+    color: #444;
+}
+
+.card strong {
+    color: #cba135;
+    font-size: 1.15rem;
+}
+
+.badge {
+    background-color: #1e3932 !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    padding: 0.5em 0.8em;
+}
+
+#themeToggle {
+    border-color: #d4e9e2;
+    color: #d4e9e2;
+}
+
+#themeToggle:hover {
+    background-color: #d4e9e2;
+    color: #1e3932;
+}
+
+footer {
+    background-color: #1e3932 !important;
+    color: #d4e9e2;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+}
+
+[data-bs-theme="dark"] body,
+body[data-bs-theme="dark"] {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+
+body[data-bs-theme="dark"] .card {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    border-left-color: #cba135;
+}
+
+body[data-bs-theme="dark"] .card-title {
+    color: #ffffff;
+}
+
+body[data-bs-theme="dark"] .card-text {
+    color: #d1d5db;
+}
+
+body[data-bs-theme="dark"] h2 {
+    color: #f3f4f6;
+    border-color: #cba135;
+}
+
+body[data-bs-theme="dark"] #sortSelect {
+    background-color: #1f2937;
+    color: white;
+    border-color: #cba135;
+}
+
+body[data-bs-theme="dark"] .btn-outline-primary {
+    border-color: #cba135;
+    color: #fcd34d;
+}
+
+body[data-bs-theme="dark"] .btn-outline-primary:hover {
+    background-color: #cba135;
+    color: #111827;
+}
+
+.btn-starbucks {
+    background-color: #00704a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.45rem 0.9rem;
+    transition: 0.2s ease;
+}
+
+.btn-starbucks:hover {
+    background-color: #1e3932;
+    color: white;
+}
+
+.starbucks-modal {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.starbucks-modal .modal-header {
+    background: linear-gradient(135deg, #1e3932 0%, #00704a 100%);
+    color: white;
+    border: none;
+}
+
+.starbucks-modal .modal-title {
+    font-weight: bold;
+}
+
+.starbucks-modal .modal-body {
+    padding: 1.5rem;
+    background-color: #faf8f3;
+}
+
+.modal-price {
+    color: #cba135;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 112, 74, 0.08);
+}
+
+.accordion-button {
+    background-color: #ffffff;
+    color: #1e3932;
+    font-weight: 600;
+    padding: 1rem 1.2rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #00704a;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.accordion-body {
+    background-color: #faf8f3;
+    color: #444;
+}
+
+.starbucks-progress {
+    height: 24px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #d4e9e2;
+}
+
+.starbucks-progress .progress-bar {
+    background: linear-gradient(90deg, #00704a, #1e3932);
+    font-weight: bold;
+}
+
+body[data-bs-theme="dark"] .accordion-button {
+    background-color: #1f2937;
+    color: white;
+}
+
+body[data-bs-theme="dark"] .accordion-body {
+    background-color: #111827;
+    color: #d1d5db;
+}
+
+body[data-bs-theme="dark"] .starbucks-modal .modal-body {
+    background-color: #1f2937;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+}

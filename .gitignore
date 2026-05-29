@@ -74,6 +74,8 @@ CMakeCache.txt
 cmake_install.cmake
 CMakeLists.txt.user
 
+node_modules/
+
 # ===== Java =====
 
 # Compiled class files

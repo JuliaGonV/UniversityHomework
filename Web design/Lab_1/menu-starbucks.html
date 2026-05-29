@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Меню кав'ярні Starbucks — напої, їжа, сезонні пропозиції та корисна інформація">
+  <meta name="author" content="Starbucks Ukraine">
+
+  <title>Starbucks — Меню кав'ярні</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .tips-list li {
+      background-color: #f0f7f4;
+      border-left: 3px solid #cba135;
+      padding: 0.5em 0.8em;
+      margin-bottom: 0.5em;
+      list-style: none;
+    }
+
+    .schema-wrap .tips-box {
+      flex: 1 1 260px;
+    }
+
+    tr.vip-row td {
+      background-color: #fff3cd !important;
+      font-weight: bold;
+    }
+
+    ol.steps {
+      counter-reset: step-counter;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ol.steps > li {
+      counter-increment: step-counter;
+      padding: 0.6em 0.8em 0.6em 3em;
+      position: relative;
+      border-left: 3px solid #00704a;
+      margin-bottom: 0.8em;
+      background-color: #fafffe;
+    }
+
+    ol.steps > li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0.6em;
+      top: 0.6em;
+      background-color: #00704a;
+      color: #fff;
+      width: 1.4em;
+      height: 1.4em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85em;
+      font-weight: bold;
+    }
+
+    ol.steps ul {
+      margin-top: 0.4em;
+      padding-left: 1em;
+    }
+
+    section h2::before {
+      margin-right: 0.4em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="top">
+    <div class="header-icon">☕</div>
+
+    <h1 id="hero-title">STARBUCKS</h1>
+
+    <p class="header-sub">
+      <em>Натхнення в кожній чашці</em>
+    </p>
+
+    <p>
+      <small>Офіційне меню кав'ярні · Україна · 2026</small>
+    </p>
+
+    <h4>Преміальна кава та атмосфера</h4>
+    <h5>Сезонні пропозиції щомісяця</h5>
+    <h6>Навчальний HTML/CSS буклет</h6>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#drinks">Напої</a></li>
+      <li><a href="#food">Їжа</a></li>
+      <li><a href="#lists">Поради</a></li>
+      <li><a href="#recipes">Рецепти</a></li>
+      <li><a href="#schedule">Розклад</a></li>
+      <li><a href="#pricelist">Прайс</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="about">
+
+      <h2>☘ Про Starbucks</h2>
+
+      <div class="hero-intro-wrap">
+
+        <div>
+
+          <p class="intro">
+            <abbr title="Starbucks Corporation">Starbucks</abbr>
+            — це більше ніж кав'ярня.
+          </p>
+
+          <p>
+            <b>Starbucks</b> заснований у
+            <time datetime="1971">1971 році</time>
+            в місті Сіетл, США.
+          </p>
+
+          <p>
+            Сьогодні компанія працює у понад
+            <span>80 країнах</span>.
+          </p>
+
+          <p>
+            В Україні мережа відома якісною кавою,
+            <i>затишною атмосферою</i>,
+            персоналізацією напоїв та
+            <u>високими стандартами сервісу</u>.
+          </p>
+
+          <p>
+            Деякі старі рецепти більше не використовуються,
+            тому частину позицій було <s>видалено</s> із меню.
+          </p>
+
+          <blockquote>
+            <p>
+              Ми не в бізнесі кави, що обслуговує людей —
+              ми в бізнесі людей, що подають каву.
+            </p>
+
+            <cite>
+              — Говард Шульц
+            </cite>
+          </blockquote>
+
+          <p>
+            Відвідувачі часто кажуть:
+            <q>Тут завжди затишно та ароматно</q>.
+          </p>
+
+          <menu>
+            <li>☕ Арабіка</li>
+            <li>🌿 Матча</li>
+            <li>🧊 Cold Brew</li>
+            <li>🍂 Сезонне меню</li>
+            <li>🎁 Starbucks Rewards</li>
+          </menu>
+
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+              alt="Кава Starbucks">
+            <figcaption>
+              Фірмова атмосфера кав'ярні Starbucks
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <aside>
+          <h3>📊 Ключові факти</h3>
+
+          <ul>
+            <li><strong>Засновано:</strong><br>1971 рік</li>
+            <li><strong>Кав'ярень:</strong><br>35 000+</li>
+            <li><strong>Країн:</strong><br>80+</li>
+            <li><strong>Тиск еспресо:</strong><br>9 бар<sub>атм</sub></li>
+            <li><strong>Калорійність латте:</strong><br>190 ккал<sup>*</sup></li>
+          </ul>
+        </aside>
+
+      </div>
+
+    </section>
+
+    <section id="drinks">
+
+      <h2>☕ Гарячі та холодні напої</h2>
+
+      <p class="intro">
+        Понад 170 000 варіантів персоналізації.
+      </p>
+
+      <div class="drinks-grid">
+
+        <article>
+          <h3>Caramel Macchiato</h3>
+
+          <p>
+            Ванільний сироп, молоко та еспресо.
+          </p>
+
+          <small>від 89 грн</small>
+        </article>
+
+        <article>
+          <h3>Pumpkin Spice Latte</h3>
+
+          <p>
+            Осінній напій із гарбузовими спеціями.
+          </p>
+
+          <small>від 105 грн</small>
+        </article>
+
+        <article>
+          <h3>Cold Brew</h3>
+
+          <p>
+            Холодне заварювання протягом
+            <strong>20 годин</strong>.
+          </p>
+
+          <small>від 99 грн</small>
+        </article>
+
+        <article>
+          <h3>Matcha Latte</h3>
+
+          <p>
+            Напій на основі японського чаю матча.
+          </p>
+
+          <small>від 95 грн</small>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section id="food">
+
+      <h2>🥐 Їжа та закуски</h2>
+
+      <div class="food-grid">
+
+        <article>
+          <h3>Круасан</h3>
+
+          <p>
+            Листкова випічка з сиром та шинкою.
+          </p>
+
+          <small>65 грн</small>
+        </article>
+
+        <article>
+          <h3>Протеїновий бокс</h3>
+
+          <p>
+            Поживний набір для здорового перекусу.
+          </p>
+
+          <small>89 грн</small>
+        </article>
+
+        <article>
+          <h3>Шоколадний кекс</h3>
+
+          <p>
+            Вологий шоколадний десерт.
+          </p>
+
+          <small>55 грн</small>
+        </article>
+
+        <article>
+          <h3>Чізкейк Нью-Йорк</h3>
+
+          <p>
+            Класичний вершковий десерт.
+          </p>
+
+          <small>79 грн</small>
+        </article>
+
+      </div>
+
+      <details>
+        <summary>Алергени та позначки</summary>
+
+        <dl>
+          <dt>🌾 Глютен</dt>
+          <dd>Міститься у більшості випічки.</dd>
+
+          <dt>🥛 Лактоза</dt>
+          <dd>Доступні рослинні замінники молока.</dd>
+
+          <dt>🥜 Горіхи</dt>
+          <dd>Можливі сліди горіхів у десертах.</dd>
+
+          <dt>🐣 Яйця</dt>
+          <dd>Використовуються у випічці.</dd>
+        </dl>
+
+      </details>
+
+    </section>
+
+    <section id="lists">
+
+      <h2>📋 Поради для гостей</h2>
+
+      <ol class="steps">
+
+        <li>
+          <mark>Обирайте розмір напою</mark>
+
+          <ul>
+            <li>Tall</li>
+            <li>Grande</li>
+            <li>Venti</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>Додавайте сиропи</strong>
+
+          <ul>
+            <li>Ваніль</li>
+            <li>Карамель</li>
+            <li>Лісовий горіх</li>
+          </ul>
+        </li>
+
+        <li>
+          <em>Спробуйте сезонні пропозиції</em>
+
+          <ul>
+            <li>Pumpkin Spice Latte</li>
+            <li>Winter Toffee</li>
+          </ul>
+        </li>
+
+      </ol>
+
+    </section>
+
+    <section id="recipes">
+
+      <h2>📋 Рецепт Cold Brew</h2>
+
+      <div class="schema-wrap">
+
+<pre><code>РЕЦЕПТ COLD BREW
+
+ІНГРЕДІЄНТИ:
+● Кава — 60 г
+● Вода — 500 мл
+
+КРОКИ:
+1. Змішати каву з водою
+2. Поставити в холодильник
+3. Процідити через 18 годин
+4. Подавати з льодом
+</code></pre>
+
+      </div>
+
+      <div class="tips-box">
+
+        <h3>Поради барист</h3>
+
+        <ul class="tips-list">
+          <li>Використовуйте фільтровану воду</li>
+          <li>Обирайте грубий помел кави</li>
+          <li>Не використовуйте окріп</li>
+          <li>Зберігайте напій у холодильнику</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <section id="schedule">
+
+      <h2>🕒 Розклад роботи</h2>
+
+      <table>
+
+        <caption>
+          Графік роботи кав'ярні
+        </caption>
+
+        <thead>
+          <tr>
+            <th>День</th>
+            <th>Відкриття</th>
+            <th>Закриття</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Понеділок</td>
+            <td>08:00</td>
+            <td>22:00</td>
+          </tr>
+
+          <tr>
+            <td>Вівторок</td>
+            <td>08:00</td>
+            <td>22:00</td>
+          </tr>
+
+          <tr>
+            <td>Середа</td>
+            <td>08:00</td>
+            <td>22:00</td>
+          </tr>
+
+          <tr class="vip-row">
+            <td>П'ятниця</td>
+            <td>08:00</td>
+            <td>23:00</td>
+          </tr>
+
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="3">
+              У святкові дні графік може змінюватися
+            </td>
+          </tr>
+        </tfoot>
+
+      </table>
+
+    </section>
+
+    <section id="pricelist">
+
+      <h2>💰 Прайс-лист</h2>
+
+      <table>
+
+        <caption>
+          Прайс Starbucks
+        </caption>
+
+        <thead>
+          <tr>
+            <th>Напій</th>
+            <th>Tall</th>
+            <th>Grande</th>
+            <th>Venti</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Espresso</td>
+            <td>55 грн</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+
+          <tr>
+            <td>Caffe Latte</td>
+            <td>79 грн</td>
+            <td>95 грн</td>
+            <td>109 грн</td>
+          </tr>
+
+          <tr>
+            <td>Cappuccino</td>
+            <td>79 грн</td>
+            <td>95 грн</td>
+            <td>109 грн</td>
+          </tr>
+
+          <tr>
+            <td>Cold Brew</td>
+            <td>99 грн</td>
+            <td>115 грн</td>
+            <td>129 грн</td>
+          </tr>
+
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              Ціни актуальні станом на 2026 рік
+            </td>
+          </tr>
+        </tfoot>
+
+      </table>
+
+      <hr>
+
+      <p>
+        Приклад HTML-коду:
+      </p>
+
+<pre><code>&lt;a href="#top"&gt;Повернутися нагору&lt;/a&gt;</code></pre>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>☕ Starbucks — Меню кав'ярні</p>
+
+    <hr>
+
+    <p>
+      <small>
+        Навчальний буклет із HTML та CSS
+      </small>
+    </p>
+
+    <address>
+      Starbucks Ukraine<br>
+      вул. Хрещатик, 1<br>
+      Київ, Україна
+    </address>
+
+    <p>
+      <small>
+        &copy;
+        <time datetime="2026">2026</time>
+        Усі права захищено
+      </small>
+    </p>
+
+    <nav>
+      <ul>
+        <li><a href="#top">↑ Нагору</a></li>
+      </ul>
+    </nav>
+
+  </footer>
+
+</body>
+</html>

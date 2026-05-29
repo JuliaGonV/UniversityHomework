@@ -1,0 +1,153 @@
+/* AnnouncementsPage.module.css */
+
+.announcementsPage {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #444;
+}
+
+h2 {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.announcementsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.inputField {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+  width: 100%;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #6e7dff;
+}
+
+.submitButton {
+  background-color: #6e7dff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.submitButton:hover {
+  background-color: #5a6cc2;
+  transform: scale(1.03);
+}
+
+.announcementsList {
+  margin-top: 20px;
+}
+
+.announcementItem {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.announcementItem:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+
+.announcementItem h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #444;
+}
+
+.announcementItem p {
+  margin: 8px 0;
+}
+
+.announcementItem button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.editButton {
+  background-color: #f0ad4e;
+  margin-right: 8px;
+}
+
+.editButton:hover {
+  background-color: #ec971f;
+  transform: scale(1.05);
+}
+
+.deleteButton {
+  background-color: #d9534f;
+}
+
+.deleteButton:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+
+.errorMessage {
+  color: #d9534f;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.backButton {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}

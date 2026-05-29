@@ -1,0 +1,33 @@
+{
+  "name": "course-work",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run electron\"",
+    "server": "node ./server/index.js",
+    "client": "npm --prefix ./client run dev",
+    "electron": "wait-on http://localhost:5173 && npx electron ./electron/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^36.2.0"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.2.5",
+    "@vitejs/plugin-react": "^6.0.2",
+    "client": "^0.0.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jspdf": "^3.0.1",
+    "pg": "^8.21.0",
+    "react": "^19.2.6",
+    "react-router-dom": "^7.15.1",
+    "vite": "^8.0.14",
+    "wait-on": "^8.0.3"
+  }
+}

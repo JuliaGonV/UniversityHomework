@@ -1,0 +1,180 @@
+/* WorkOrdersPage.module.css */
+
+.container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #444;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.02);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.table button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  color: white;
+  background-color: #6e7dff;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.table button:hover {
+  background-color: #5a6cc2;
+  transform: scale(1.05);
+}
+
+.error {
+  color: #d9534f;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.actionButtons button {
+  margin-right: 10px;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.actionButtons button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+.createForm {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.createButton,
+.cancelButton {
+  background-color: #6e7dff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.createButton:hover,
+.cancelButton:hover {
+  background-color: #5a6cc2;
+  transform: scale(1.03);
+}
+
+.select,
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.textarea {
+  height: 100px;
+}
+
+.submitButton {
+  background-color: #6e7dff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.submitButton:hover {
+  background-color: #5a6cc2;
+  transform: scale(1.03);
+}
+.backButton {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
